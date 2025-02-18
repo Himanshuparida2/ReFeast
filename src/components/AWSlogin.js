@@ -8,7 +8,7 @@ export const AWSlogin=()=>{
     
     const signOutRedirect = () => {
       const clientId = process.env.REACT_APP_CLIENT_ID;
-      const logoutUri = "http://localhost:3000/";
+      const logoutUri = process.env.REACT_APP_REDIRECT_PAGE;
       const cognitoDomain = "https://us-east-1lg7xmhtnr.auth.us-east-1.amazoncognito.com";
       window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
     };
@@ -46,6 +46,7 @@ export const AWSlogin=()=>{
           email: auth.user.profile.email,
           name: auth.user.profile.name,
           phone: auth.user.profile.phone_number,
+          display_picture: null
         };
         setUserData(user); 
       }
@@ -63,6 +64,9 @@ export const AWSlogin=()=>{
     }
   
     if (auth.error) {
+      setTimeout(()=>{
+        window.location.href=process.env.REACT_APP_REDIRECT_PAGE;
+      },3000)
       return <div>Encountering error... {auth.error.message}</div>;
     }
   

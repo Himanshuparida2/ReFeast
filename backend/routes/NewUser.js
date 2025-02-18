@@ -4,8 +4,7 @@ const express=require('express')
 const route=express.Router()
 
 const NewUser = async (req, res) => {
-  const { username, name, email, phone } = req.body;
-  console.log(req.body)
+  const { username, name, email, phone, display_picture } = req.body;
   const getparam = {
     TableName: "ReFeast_User",
     Key: {
@@ -22,26 +21,24 @@ const NewUser = async (req, res) => {
           name,
           email,
           phone,
+          display_picture,
           CreatedAt: new Date().toISOString(),
         },
       };
       try {
         const data = await dynamodb.put(param).promise();
-        console.log("Data Successfully inserted into DynamoDB.");
         res
           .status(201)
-          .json({ message: "User Data Registed.", data: data });
+          .json({ message: "User Data Registed."});
       } catch (err) {
-        console.error("Error inserting data into DynamoDB: ", err);
         res
           .status(500)
-          .json({ error: "Failed to insert the data into DynamoDB" });
+          .json({ error: "Failed to insert the data into DynamoDB",err });
       }
     } else {
-      res.status(200).json({ message: "Successfully Logged in",data:Data });
+      res.status(200).json({ message: "Successfully Logged in"});
     }
   } catch (error) {
-    console.error(error);
     res.status(500).json({ message: "Some Error Occured",error});
   }
 };
