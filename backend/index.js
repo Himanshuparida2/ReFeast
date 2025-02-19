@@ -8,8 +8,9 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/auth/login",require("./routes/User"))
-app.use('/additem',require('./routes/AddItems'))
-app.use('/updateitem',require('./routes/UpdateItem'))
-app.use("/updateuserdata",require('./routes/UpdateUserData'))
+app.use('/add-item',require('./routes/AddItems'))
+app.use('/update-item',require('./routes/UpdateItem'))
+app.use("/update-user-data",require('./routes/UpdateUserData'))
+app.use("/get-all-items",require("./routes/GetAllItems"))
 
 app.listen(5050,()=>{console.log("The Database is Connected.")})

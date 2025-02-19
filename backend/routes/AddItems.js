@@ -2,18 +2,43 @@ const dynamodb = require("../AWS/DynamoDB");
 const express = require("express");
 const route = express.Router();
 const {v4:uuidv4}=require('uuid')
+const AWS=require("aws-sdk")
+const s3=new AWS.S3();
+const fs=require('fs');
 
 const AddItem = async (req, res) => {
 
   const { username, ItemName, ItemDescription, ItemStatus, ItemImages } = req.body;
   const ItemID=uuidv4()
+  const UploadImage=(imgpath,itemid,ind)=>{
+    return new Promise((resolve,reject)=>{
+      const filestream=fs.createReadStream(imgpath)
+      const fileExtend=imgpath.split('.').pop().toLowerCase()
+      const folder='Items_pictures/'
+      const contenttype=fileExtend=='jpg' || fileExtend=='jpeg'?'image/jpg':'image/png'
+      const param={
+        Bucket:'refeastwebapp',
+        Key:`${folder}${itemid}_image_${ind}`,
+        Body:filestream,
+        ContentType:contenttype
+      }
+      s3.upload(param,(err,data)=>{
+        if(err){
+          reject(err)
+        }
+        else{
+          resolve(data.Location)
+        }
+      })
+    })
+  }
+  try {
   const param = {
     TableName: "ReFeast_User",
     Key: {
       username: username,
     },
   };
-  try {
     const data = await dynamodb.get(param).promise();
     let items=[]
     if (!data.Item) {
@@ -21,6 +46,9 @@ const AddItem = async (req, res) => {
       res.status(404).json({ message: "User Not Found!!" });
     } 
     else {
+      const uploadimages=await Promise.all(
+        ItemImages.map((imgpath,index)=>UploadImage(imgpath,ItemID,index))
+      )
       items=data.Item.Items;
       const param={
         TableName:"ReFeast_Items",
@@ -30,7 +58,7 @@ const AddItem = async (req, res) => {
           ItemName:ItemName,
           ItemDescription:ItemDescription,
           ItemStatus:ItemStatus,
-          ItemImages:ItemImages
+          ItemImages:uploadimages
         }
       }
       

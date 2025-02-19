@@ -1,6 +1,32 @@
 const dynamodb=require('../AWS/DynamoDB');
 const express=require('express')
 const route=express.Router()
+const AWS=require('aws-sdk')
+const s3=new AWS.S3();
+const fs=require('fs')
+
+const UploadImages=(imgpath,itemid,ind)=>{
+    return new Promise((resolve,reject)=>{
+        const filestream=fs.createReadStream(imgpath)
+        const fileExtent=imgpath.split('.').pop().toLowerCase()
+        const folder='Items_pictures/'
+        const contenttype=fileExtent==='jpg' | fileExtent==='jpeg' ? 'image/jpg' : 'image/png'
+        const param={
+            Bucket:'refeastwebapp',
+            Key:`${folder}${itemid}_image_${ind}`,
+            Body:filestream,
+            ContentType:contenttype
+        }
+        s3.upload(param,(err,data)=>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(data.Location)
+            }
+        })
+    })
+}
 
 const UpdateItem=async(req,res)=>{
     const {username,ItemID,ItemName,ItemDescription,ItemStatus,ItemImages}=req.body;
@@ -15,6 +41,9 @@ const UpdateItem=async(req,res)=>{
     const data=await dynamodb.get(param).promise()
     if(data.Item){
         try{
+            if(ItemImages!=data.Item.ItemImages){
+                const newImages=await Promise.all(ItemImages.map((imgpath,index)=>UploadImages(imgpath,ItemID,index)))
+            }
         const UpdatedParam={
             TableName:'ReFeast_Items',
             Key:{
