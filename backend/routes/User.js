@@ -8,7 +8,7 @@ const NewUser = async (req, res) => {
   const getparam = {
     TableName: "ReFeast_User",
     Key: {
-      username: username,
+      username:username,
     },
   };
   try {
