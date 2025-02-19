@@ -14,6 +14,7 @@ const NewUser = async (req, res) => {
   try {
     const Data = await dynamodb.get(getparam).promise();
     if (!Data.Item) {
+      const Items_List=[]
       const param = {
         TableName: "ReFeast_User",
         Item: {
@@ -22,6 +23,7 @@ const NewUser = async (req, res) => {
           email,
           phone,
           display_picture,
+          Items_List,
           CreatedAt: new Date().toISOString(),
         },
       };
@@ -39,7 +41,8 @@ const NewUser = async (req, res) => {
       res.status(200).json({ message: "Successfully Logged in"});
     }
   } catch (error) {
-    res.status(500).json({ message: "Some Error Occured",error});
+    console.log(error)
+    res.status(500).json({ message: "Some Error Occured"});
   }
 };
 route.post('/',NewUser)

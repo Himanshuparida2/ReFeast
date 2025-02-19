@@ -7,7 +7,8 @@ const cors=require('cors')
 app.use(cors())
 app.use(express.json())
 
-app.use("/auth/login",require("./routes/NewUser"))
+app.use("/auth/login",require("./routes/User"))
 app.use('/additem',require('./routes/AddItems'))
+app.use('/updateitem',require('./routes/UpdateItem'))
 
 app.listen(5050,()=>{console.log("The Database is Connected.")})
