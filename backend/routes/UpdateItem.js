@@ -1,30 +1,13 @@
 const dynamodb=require('../AWS/DynamoDB');
 const express=require('express')
 const route=express.Router()
-const AWS=require('aws-sdk')
-const s3=new AWS.S3();
-const fs=require('fs')
+const upload=require('../AWS/UploadImageToS3')
 
 const UploadImages=(imgpath,itemid,ind)=>{
-    return new Promise((resolve,reject)=>{
-        const filestream=fs.createReadStream(imgpath)
-        const fileExtent=imgpath.split('.').pop().toLowerCase()
+    return new Promise(async(resolve,reject)=>{
         const folder='Items_pictures/'
-        const contenttype=fileExtent==='jpg' | fileExtent==='jpeg' ? 'image/jpg' : 'image/png'
-        const param={
-            Bucket:'refeastwebapp',
-            Key:`${folder}${itemid}_image_${ind}`,
-            Body:filestream,
-            ContentType:contenttype
-        }
-        s3.upload(param,(err,data)=>{
-            if(err){
-                reject(err)
-            }
-            else{
-                resolve(data.Location)
-            }
-        })
+        const location =await upload(itemid,imgpath,folder)
+        resolve(location)
     })
 }
 

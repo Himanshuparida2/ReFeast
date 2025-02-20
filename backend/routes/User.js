@@ -1,10 +1,14 @@
 const dynamodb = require("../AWS/DynamoDB");
-const AWS=require('aws-sdk')
+const upload = require('../AWS/UploadImageToS3')
 const express=require('express')
 const route=express.Router()
 
+require('dotenv').config()
+
+const folder='display_pictures/'
+
 const NewUser = async (req, res) => {
-  const { username, name, email, phone, display_picture } = req.body;
+  let { username, name, email, phone, display_picture } = req.body;
   const getparam = {
     TableName: "ReFeast_User",
     Key: {
@@ -14,6 +18,7 @@ const NewUser = async (req, res) => {
   try {
     const Data = await dynamodb.get(getparam).promise();
     if (!Data.Item) {
+      display_picture= await upload(username,display_picture,folder)
       const Items_List=[]
       const param = {
         TableName: "ReFeast_User",
@@ -31,14 +36,14 @@ const NewUser = async (req, res) => {
         const data = await dynamodb.put(param).promise();
         res
           .status(201)
-          .json({ message: "User Data Registed."});
+          .json({ message: "User Data Registed.",data:data.Item});
       } catch (err) {
         res
           .status(500)
           .json({ error: "Failed to insert the data into DynamoDB",err });
       }
     } else {
-      res.status(200).json({ message: "Successfully Logged in"});
+      res.status(200).json({ message: "Successfully Logged in",Data:Data.Item});
     }
   } catch (error) {
     console.log(error)

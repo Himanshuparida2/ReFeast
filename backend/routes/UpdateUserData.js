@@ -1,23 +1,12 @@
 const dynamodb=require('../AWS/DynamoDB')
 const express= require('express')
 const route=express.Router()
-const AWS=require('aws-sdk')
-const s3=new AWS.S3()
-const fs=require('fs')
+const upload=require('../AWS/UploadImageToS3')
 
 const UpdateUserData=async(req,res)=>{
     const {username,name,email,newImg,phone}=req.body
     let newimg=newImg
     const folder='display_pictures/'
-    const filestream=fs.createReadStream(newImg)
-    const fileExtend=newImg.split('.').pop().toLowerCase()
-    const contenttype=fileExtend==='jpg' || fileExtend==='jpeg' ? 'image/jpg' : 'image/png'
-    const S3param={
-        Bucket:'refeastwebapp',
-        Key:`${folder}${username}`,
-        Body:filestream,
-        ContentType:contenttype
-    }
     const param={
         TableName:"ReFeast_User",
         Key:{
@@ -28,14 +17,7 @@ const UpdateUserData=async(req,res)=>{
         const data=await dynamodb.get(param).promise()
         if(data.Item){
             if(data.Item.display_picture!=newimg){
-                s3.upload(S3param,(err,data)=>{
-                    if(err){
-                        console.error(err)
-                    }
-                    else{
-                       newimg=data.Location
-                    }
-                })
+                newimg= await upload(username,newImg,folder)
             }
             const UDparam={
                 TableName:"ReFeast_User",

@@ -30,6 +30,7 @@
     "@aws-sdk/client-dynamodb": "^3.744.0",
     "@aws-sdk/lib-dynamodb": "^3.744.0",
     "aws-sdk": "^2.1692.0",
+    "axios": "^1.7.9",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.7",

@@ -2,34 +2,18 @@ const dynamodb = require("../AWS/DynamoDB");
 const express = require("express");
 const route = express.Router();
 const {v4:uuidv4}=require('uuid')
-const AWS=require("aws-sdk")
-const s3=new AWS.S3();
-const fs=require('fs');
+require('dotenv').config()
+const upload=require('../AWS/UploadImageToS3')
 
 const AddItem = async (req, res) => {
 
   const { username, ItemName, ItemDescription, ItemStatus, ItemImages } = req.body;
   const ItemID=uuidv4()
-  const UploadImage=(imgpath,itemid,ind)=>{
-    return new Promise((resolve,reject)=>{
-      const filestream=fs.createReadStream(imgpath)
-      const fileExtend=imgpath.split('.').pop().toLowerCase()
+  const UploadImage=(imgpath,itemid)=>{
+    return new Promise(async(resolve,reject)=>{
       const folder='Items_pictures/'
-      const contenttype=fileExtend=='jpg' || fileExtend=='jpeg'?'image/jpg':'image/png'
-      const param={
-        Bucket:'refeastwebapp',
-        Key:`${folder}${itemid}_image_${ind}`,
-        Body:filestream,
-        ContentType:contenttype
-      }
-      s3.upload(param,(err,data)=>{
-        if(err){
-          reject(err)
-        }
-        else{
-          resolve(data.Location)
-        }
-      })
+      const location = await upload(itemid,imgpath,folder)
+      resolve(location)
     })
   }
   try {
@@ -47,7 +31,7 @@ const AddItem = async (req, res) => {
     } 
     else {
       const uploadimages=await Promise.all(
-        ItemImages.map((imgpath,index)=>UploadImage(imgpath,ItemID,index))
+        ItemImages.map((imgpath)=>UploadImage(imgpath,ItemID))
       )
       items=data.Item.Items;
       const param={
@@ -90,7 +74,6 @@ const AddItem = async (req, res) => {
       console.error(err);
       res.status(500).json({ message: "Some Error Occures" });
     }
-      //res.status(201).json({message:"Account Found",data:data})
 };
 route.post("/", AddItem);
 module.exports = route;
