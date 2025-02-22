@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { useAuth } from "react-oidc-context";
 
+
 export const AWSlogin=()=>{
 
     const auth = useAuth();
@@ -38,7 +39,6 @@ export const AWSlogin=()=>{
       }
     };
   
-
     useEffect(() => {
       if (auth.isAuthenticated) {
         const user = {
@@ -51,11 +51,11 @@ export const AWSlogin=()=>{
         setUserData(user); 
       }
     }, [auth.isAuthenticated, auth.user]); 
-  
+
     useEffect(() => {
       if (userData) {
         getData(); 
-      }
+      }// eslint-disable-next-line
     }, [userData]);
   
    
@@ -85,9 +85,9 @@ export const AWSlogin=()=>{
     }
   
     return (
-      <div>
-        <button onClick={() => auth.signinRedirect()}>Sign in</button>
-        <button onClick={() => signOutRedirect()}>Sign out</button>
+      <div className="">
+        <button className=" m-4" onClick={() => auth.signinRedirect()}>Sign in</button>
+        <button className="" onClick={() => signOutRedirect()}>Sign out</button>
       </div>
     );
   };
