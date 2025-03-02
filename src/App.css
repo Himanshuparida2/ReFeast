@@ -1,6 +1,12 @@
 *{
   font-family: sans-serif;
 }
+.home-first{
+  display: flex;
+  margin-top: 1cm;
+  width: 100%;
+  height: 100vh;
+}
 .navbar{
   border: 1px solid black;
   display: flex;
@@ -24,16 +30,20 @@
     transform: scale(1.12) ;
   }
 }
-.navbar button{
+.login-button{
   position: absolute;
   width: 2.5cm;
+  height: 1cm;
   right: 1cm;
-  line-height: 1cm;
-  font-weight: 550;
   cursor: pointer;
   border-radius: 25px;
   &:hover{
     background-color: beige;
+  }
+  .login-button-Link{
+    font-weight: 550;
+    text-decoration: none;
+    color: black;
   }
 }
 .navbar-list{
@@ -104,13 +114,6 @@
     background-color: red;
     transition: width 0.3s ease-in-out;
 }
-.home{
-  
-}
-.home-first{
-  display: flex;
-  margin-top: 1cm;
-}
 .home-first button{
   height: 1.5cm;
   width: 3cm;
@@ -132,7 +135,7 @@
 .centreImg{
   height: 18cm;
   position: absolute;
-  right: 1cm;
+  right: 0;
   top: 2cm;
 }
 .centreLogo{
@@ -140,4 +143,25 @@
   width: 50%;
   position: absolute;
   top: 7cm;
+}
+.home-second{
+  height: 100vh;
+  width: 100vi;
+  background-color: rgb(41, 239, 209);
+}
+.infograph{
+  align-content: center;
+}
+#infographic{
+  border-radius: 1cm;
+  width: 10cm;
+  margin-top: 2.2cm;
+  right: 1cm;
+  position: absolute;
+}
+#infographic_chart{
+  position: absolute;
+  left: 1cm;
+  height: 18cm;
+  margin-top: 2cm;
 }

@@ -7,24 +7,21 @@ import { AuthProvider } from "react-oidc-context";
 import { BrowserRouter } from 'react-router-dom';
 
 const cognitoAuthConfig = {
-  authority: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_Lg7XmHtnR",
+  authority: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_04N2HhmF9",
   client_id: process.env.REACT_APP_AWS_CLIENT_ID,
   redirect_uri: "http://localhost:3000/",
   response_type: "code",
-  scope: "aws.cognito.signin.user.admin email openid phone profile",
+  scope: "phone openid email",
 };
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider {...cognitoAuthConfig}>
       <BrowserRouter>
-      <App />
+        <App />
       </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

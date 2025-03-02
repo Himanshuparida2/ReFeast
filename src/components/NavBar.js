@@ -15,7 +15,7 @@ function NavBar() {
             <li><Link className='nav-ele nav-ele-3' to='/about-us'>About Us</Link></li>
             <li><Link className='nav-ele nav-ele-4' to='/contact-us'>Contact Us</Link></li>
         </ul>
-    <button>Login</button>
+    <button className='login-button'><Link className='login-button-Link' to='/login'>Login</Link></button>
       </div>
     </div>
   )
