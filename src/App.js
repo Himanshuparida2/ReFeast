@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={Home}/>
         <Route path='/login' element={<AWSlogin/>}></Route>
       </Routes>
       <Link to='/'><Home/></Link>
