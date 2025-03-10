@@ -8,9 +8,9 @@ export const AWSlogin=()=>{
     const [userData, setUserData] = useState(null);
     
     const signOutRedirect = () => {
-      const clientId = process.env.REACT_APP_CLIENT_ID;
+      const clientId = process.env.REACT_APP_AWS_CLIENT_ID;
       const logoutUri = process.env.REACT_APP_REDIRECT_PAGE;
-      const cognitoDomain = "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_04N2HhmF9";
+      const cognitoDomain = "https://us-east-1yemmutdlq.auth.us-east-1.amazoncognito.com";
       window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
     };
     
@@ -48,8 +48,9 @@ export const AWSlogin=()=>{
           phone: auth.user.profile.phone_number,
           display_picture: null
         };
-        setUserData(user); 
-      }
+        setUserData(user);
+        getData()
+      }// eslint-disable-next-line
     }, [auth.isAuthenticated, auth.user]); 
 
     useEffect(() => {

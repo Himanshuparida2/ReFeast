@@ -8,7 +8,7 @@ function GoogleLog() {
   const [userData,setUserData]=useState(null)
   const getData = async () => {
     if (!userData) return; 
-    const url = "http://localhost:5050/auth/login";
+    const url = "http://localhost:5050/auth/googlelogin";
 
     try {
       const response = await fetch(url, {
@@ -35,7 +35,7 @@ function GoogleLog() {
         onSuccess={(credentialResponse) => {
           const user=jwtDecode(credentialResponse.credential)
           const GoogleUser={
-            username:user.email+user.name,
+            username:user.email,
             name:user.name,
             email:user.email,
             phone:null,

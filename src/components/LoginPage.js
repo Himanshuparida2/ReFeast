@@ -1,10 +1,10 @@
 import React from 'react'
-import { AWSlogin } from './components/AWSlogin';
-import GoogleLog from './components/GoogleLog';
+import { AWSlogin } from './AWSlogin';
+import GoogleLog from './GoogleLog';
 
 function LoginPage() {
   return (
-    <div>
+    <div className='login'>
         <AWSlogin/>
         <GoogleLog/>
     </div>

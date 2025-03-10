@@ -7,9 +7,7 @@ const upload = async (name,image,folder,filetype) => {
         const api = process.env.Upload_To_S3;
         
         if (!image || !name) {
-            return res.status(400).json({
-                message: 'Missing image or username in the request body.',
-            });
+            return null;
         }
 
         const fileExtension = image.split('.').pop().toLowerCase();

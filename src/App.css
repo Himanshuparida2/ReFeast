@@ -46,6 +46,10 @@
     color: black;
   }
 }
+.login{
+  position: absolute;
+  top: 1.6cm;
+}
 .navbar-list{
   position: absolute;
   right: 3.5cm;
