@@ -3,14 +3,17 @@
 }
 .home-first{
   display: flex;
-  margin-top: 1cm;
   width: 100%;
   height: 100vh;
 }
 .navbar{
   border-bottom: 1px solid black;
+  position: fixed;
+  z-index: 2;
   display: flex;
   align-items: center;
+  width: 100%;
+  background-color: #F5F5F5;
 }
 .navbar .logo{
   height: 1.25cm;
@@ -118,23 +121,47 @@
     background-color: red;
     transition: width 0.3s ease-in-out;
 }
+.home{
+  background-color:whitesmoke;
+  width: 100%;
+  height: 100%;
+}
 .home-first button{
   height: 1.5cm;
-  width: 3cm;
+  width: 4cm;
   position: absolute;
   bottom: 4.5cm;
   border-radius: 25cm;
-  font-size: 0.4cm;
   cursor: pointer;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  &:hover{
+    background-color: aquamarine;
+    color: black;
+  }
+}
+.home-first button h4{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 550;
+  font-weight: 500;
   text-align: center;
+  font-size: 0.4cm;
+  margin-left: 7px;
 }
 .add-item{
-  left: 5.5cm;
+  left: 5cm;
+}
+.add-item img{
+  height: 0.8cm;
+  margin-left: 10px;
+  margin-right: 4px;
+}
+.order-now img{
+  height: 0.8cm;
+  margin-left: 10px;
 }
 .order-now{
-  left: 9.5cm;
+  left: 10cm;
 }
 .centreImg{
   height: 18cm;
@@ -149,23 +176,64 @@
   top: 7cm;
 }
 .home-second{
+  background-color:whitesmoke;
   height: 100vh;
   width: 100vi;
-  background-color: rgb(41, 239, 209);
+}
+.home-third{
+  background-color:whitesmoke;
+  height: 100vh;
+  width: 100vi;
 }
 .infograph{
-  align-content: center;
+  height: 100vh;
+  width: 100vb;
+}
+.infograph div{
+  margin-top: 1cm;
+}
+.infograph h2{
+  position: absolute;
+  right: 11.7cm;
+}
+#info-description{
+  position: absolute;
+  right: 3cm;
+  margin-top: 2.2cm;
+  width: 15cm;
+  font-size:larger;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.infograph ul{
+  list-style: none;
+  position: absolute;
+  top: 27.5cm;
+  right: 3cm;
+  width: 14.5cm;
+  margin-top: 4cm;
+}
+.infograph ul h2{
+  position: absolute;
+  top: -2cm;
+  right: 11.11cm;
+  width: 5cm;
+}
+.infograph ul li p{
+  margin-left: 0.5cm;
 }
 #infographic{
-  border-radius: 1cm;
-  width: 10cm;
-  margin-top: 2.2cm;
-  right: 1cm;
   position: absolute;
+  right: 1cm;
+  margin-top: 2cm;
+  width: 10cm;
+  border-radius: 1cm;
+  border: 2px solid black;
 }
 #infographic_chart{
   position: absolute;
   left: 1cm;
+  top: 25.5cm;
+  bottom: 0;
   height: 18cm;
-  margin-top: 2cm;
 }
