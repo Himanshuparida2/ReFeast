@@ -5,8 +5,11 @@ import GoogleLog from './GoogleLog';
 function LoginPage() {
   return (
     <div className='login'>
-        <AWSlogin/>
-        <GoogleLog/>
+        <div className="login-inner">
+          <AWSlogin/>
+          <h3>Or</h3>
+          <GoogleLog/>
+        </div>
     </div>
   )
 }

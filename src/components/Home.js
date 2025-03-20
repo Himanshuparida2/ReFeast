@@ -68,7 +68,7 @@ function Home() {
             <ul>
               <h2>How It Works:</h2>
               <li>
-                <h3>List Surplus Food</h3>
+                <h3>🍽 List Surplus Food</h3>
                 <p>
                   If you have extra food—whether you're a restaurant, household,
                   or business—you can list it on our platform for others to
@@ -76,14 +76,14 @@ function Home() {
                 </p>
               </li>
               <li>
-                <h3>Find & Claim Food</h3>
+                <h3>🤝 Find & Claim Food</h3>
                 <p>
                   Individuals and NGOs can browse available food listings and
                   claim what they need, reducing waste and feeding more people.
                 </p>
               </li>
               <li>
-                <h3>Food Safety Measures</h3>
+                <h3>✔️ Food Safety Measures</h3>
                 <p>
                   We prioritize food safety by ensuring that only fresh,
                   consumable food is shared, following best practices for
@@ -91,14 +91,14 @@ function Home() {
                 </p>
               </li>
               <li>
-                <h3>Community Impact</h3>
+                <h3>🌍 Community Impact</h3>
                 <p>
                   By participating in food-sharing, you're directly impacting
                   lives, reducing hunger, and strengthening community bonds.
                 </p>
               </li>
               <li>
-                <h3>Sustainable Future</h3>
+                <h3>♻️ Sustainable Future</h3>
                 <p>
                   Every meal saved from waste contributes to a greener planet by
                   reducing food waste and carbon footprint.
@@ -110,6 +110,9 @@ function Home() {
         <div className="home-third">
           <div className="infograph">
           <img src={infographic} alt="infographic" id="infographic" />
+          <ul className="infograph-list">
+            
+          </ul>
           </div>
         </div>
       </div>

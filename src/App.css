@@ -40,11 +40,14 @@
   right: 1cm;
   cursor: pointer;
   border-radius: 25px;
+  font-weight: 550;
   &:hover{
     background-color: beige;
+    .login-dropdown{
+      display: block;
+    }
   }
   .login-button-Link{
-    font-weight: 550;
     text-decoration: none;
     color: black;
   }
@@ -52,6 +55,40 @@
 .login{
   position: absolute;
   top: 1.6cm;
+  &:hover .login-dropdown{
+    display: block;
+  }
+}
+.login-dropdown{
+  position: absolute;
+  right: -0.5cm;
+  width: 5cm;
+  height: 3.5cm;
+  border: 1px solid black;
+  background-color: white;
+  display: none;
+  list-style: none;
+}
+#login-dropdown-or{
+  position: absolute;
+  left: 2.9cm;
+  top: 1.4cm;
+}
+.S9gUrf-YoZ4jf{
+  position: absolute;
+  right: 20px;
+  top: 1.9cm;
+}
+.signinManually{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 5cm;
+  height: 1cm;
+  cursor: pointer;
+  &:hover{
+    color: red;
+  }
 }
 .navbar-list{
   position: absolute;
@@ -220,15 +257,15 @@
   width: 5cm;
 }
 .infograph ul li p{
-  margin-left: 0.5cm;
+  margin-left: 0.7cm;
 }
 #infographic{
   position: absolute;
   right: 1cm;
   margin-top: 2cm;
   width: 10cm;
-  border-radius: 1cm;
-  border: 2px solid black;
+  border-radius: 1.5cm;
+  border: 1px solid black;
 }
 #infographic_chart{
   position: absolute;
@@ -236,4 +273,29 @@
   top: 25.5cm;
   bottom: 0;
   height: 18cm;
+}
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+  width: 100vw;
+}
+.login-inner{
+  height: 5cm;
+  width: 9cm;
+  border: 1.5px solid black;
+}
+.login-inner h3{
+  text-align: center;
+  position: absolute;
+  left: 19cm;
+  top: 9.3cm;
+}
+.AWSlogin button{
+  height: 1cm;
+  cursor: pointer;
+  position: absolute;
+  top: 8.4cm;
+  left: 17.9cm;
 }
