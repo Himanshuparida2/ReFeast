@@ -1,20 +1,33 @@
 import React, { useState } from "react";
-import centreLogo from "../image/ReFeast Logo centre.png";
-import refeastimg from "../image/centre-logo2.png";
+import centreLogo from "../image/ReFeast_Logo_centre_with_outline.jpg";
+import refeastimg from "../image/Phone.png";
 import infographic from "../image/Infographic.gif";
 import infographic_chart from "../image/infographic_chart.png";
 import ordernow from "../image/purchase-order.png";
 import animatedordernow from "../image/purchase-order-animated.gif";
 import additem from "../image/add.png";
 import animatedadditem from "../image/add-animated.gif";
+import {useCurrentPage} from "../context/currentpage";
 
 function Home() {
   const [OrderHover, setOrderHover] = useState(false);
   const [AddHover, setAddHover] = useState(false);
+  // eslint-disable-next-line
+  let {currentPage,setCurrentPage}=useCurrentPage()
+  if(currentPage==="about-us"){
+    setTimeout(() => {
+    window.scrollTo(0,document.getElementById("about-us").offsetTop)
+    }, 200);
+  }
+  if(currentPage==="contact-us"){
+    setTimeout(() => {
+    window.scrollTo(0,document.getElementById("contact-us").offsetTop)
+    }, 200);
+  }
 
   return (
     <div className="home">
-      <div className="home-first">
+      <section className="home-first" id="home">
         <img className="centreLogo" src={centreLogo} alt="" />
         <img src={refeastimg} alt="" className="centreImg" />
         <button
@@ -49,8 +62,8 @@ function Home() {
           )}
           <h4>Order Now</h4>
         </button>
-      </div>
-      <div className="home-second">
+      </section>
+      <section className="home-second" id="about-us">
         <div className="infograph">
         <img
               src={infographic_chart}
@@ -115,7 +128,7 @@ function Home() {
           </ul>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
