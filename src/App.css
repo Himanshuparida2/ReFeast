@@ -302,3 +302,30 @@ html{
   top: 8.4cm;
   left: 17.9cm;
 }
+.footer{
+  position: absolute;
+  bottom: -242%;
+  left: 0;
+  width: 100%;
+  height: 8cm;
+  background-color: #cfbafd;
+  display: flex;
+  font-size: 0.5cm;
+}
+.footer h3{
+  margin-left: 1cm;
+  margin-top: 0.4cm;
+  font-size: xxx-large;
+  font-family: sans-serif;
+  font-weight: 550;
+}
+.footer p{
+  margin-left: 1cm;
+  margin-top: -0.2cm;
+  width: 50%;
+}
+#contact-us-footer{
+  position: absolute;
+  right: -3cm;
+  width: 50%;
+}

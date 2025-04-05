@@ -8,6 +8,7 @@ import animatedordernow from "../image/purchase-order-animated.gif";
 import additem from "../image/add.png";
 import animatedadditem from "../image/add-animated.gif";
 import {useCurrentPage} from "../context/currentpage";
+import Footer from "./Footer";
 
 function Home() {
   const [OrderHover, setOrderHover] = useState(false);
@@ -128,6 +129,9 @@ function Home() {
           </ul>
           </div>
         </div>
+      </section>
+      <section id='contact-us' className="footer">
+        <Footer/>
       </section>
     </div>
   );
