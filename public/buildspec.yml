@@ -13,7 +13,7 @@ phases:
       - echo Build started on `date`
       - ls -al
       - mkdir -p output
-      - cp index.html output/
+      - cp public/index.html output/
 
   post_build:
     commands:
