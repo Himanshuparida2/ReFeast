@@ -4,17 +4,49 @@ import insta from '../image/instagram.svg'
 function Footer() {
   return (
     <div>
-      <div style={{display:"flex"}}>
-        <div>
-            <h3>ReFeast</h3>
-            <p>At Refeast, we believe no food should go to waste while people go hungry. Our platform connects individuals and organizations with surplus food to those in need — efficiently, responsibly, and with dignity. By enabling food sharing at the community level, we help reduce waste, fight hunger, and build a network of care and sustainability. Whether you're an individual with leftovers or an NGO seeking supplies, Refeast makes giving and receiving simple, safe, and impactful.</p>
-        </div>
-        <div id='contact-us-footer'>
-            <h4>Contact Us</h4>
-            <p>Email : himanshuparida27@gmail.com</p>
-            <a href='https://www.instagram.com/refeastofficial/' style={{position:'absolute',alignItems:'center',display:'flex',cursor:'pointer',textDecoration:'none'}}><img style={{width:'1.2cm',marginLeft:'1cm'}} src={insta} alt='instagram'/>@refeastofficial</a>
-        </div>
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-section">
+      <h2 class="footer-logo">ReFeast</h2>
+      <p>Reducing food waste by connecting those with excess to those in need. Together, we make a difference.</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#donate">Donate Food</a></li>
+        <li><a href="#contact-us">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Get Involved</h3>
+      <ul>
+        <li><a href="/partner">Partner with Us</a></li>
+        <li><a href="/volunteer">Volunteer</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: support@refeast.in</p>
+      <p>Phone: +91-XXXXXXXXXX</p>
+      <div class="footer-socials">
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"/></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"/></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter"/></a>
       </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 ReFeast. All rights reserved.
+  </div>
+</footer>
+    
     </div>
   )
 }

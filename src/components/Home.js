@@ -72,7 +72,7 @@ function Home() {
               id="infographic_chart"
             />
           <div>
-            <h2>Reclaim, Share, REPEAT</h2>
+            <h2 style={{marginTop:"2.5cm"}}>Reclaim, Share, REPEAT</h2>
             <p id="info-description">
               At ReFeast, our mission is simple: reduce food waste and build a
               sustainable future by connecting surplus food with those in need.
@@ -130,7 +130,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section id='contact-us' className="footer">
+      <section id='contact-us'>
         <Footer/>
       </section>
     </div>
