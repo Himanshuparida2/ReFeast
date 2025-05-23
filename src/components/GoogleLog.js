@@ -30,8 +30,8 @@ function GoogleLog() {
     }
   };
   return (
-    <GoogleOAuthProvider clientId={Google_Client_ID}>
-      <GoogleLogin
+    <GoogleOAuthProvider className="google-button" clientId={Google_Client_ID}>
+      <GoogleLogin className="google-button"
         onSuccess={(credentialResponse) => {
           const user=jwtDecode(credentialResponse.credential)
           const GoogleUser={

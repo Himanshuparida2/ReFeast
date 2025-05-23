@@ -307,11 +307,15 @@ html{
   top: 8.4cm;
   left: 17.9cm;
 }
+.google-button{
+  cursor: pointer;
+}
 #contact-us{
   background-color: inherit;
 }
 .footer {
-  background-color: #e6f4ea;
+  background-color: inherit;
+  border: 2px solid black;
   color: #333;
   padding: 40px 20px 20px;
   font-family: Arial, sans-serif;
