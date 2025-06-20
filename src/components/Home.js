@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import centreLogo from "../image/ReFeast_Logo_centre_with_outline.jpg";
-import refeastimg from "../image/Phone.png";
+import refeastimg from "../image/main phone.gif";
 import infographic from "../image/Infographic.gif";
 import infographic_chart from "../image/infographic_chart.png";
 import ordernow from "../image/purchase-order.png";
@@ -80,7 +80,7 @@ function Home() {
               communities thrive.
             </p>
             <ul>
-              <h2>How It Works:</h2>
+              <h2 style={{marginTop:"1cm"}}>How It Works:</h2>
               <li>
                 <h3>🍽 List Surplus Food</h3>
                 <p>
@@ -122,10 +122,17 @@ function Home() {
           </div>
         </div>
         <div className="home-third">
-          <div className="infograph">
+          <div className="infographic">
           <img src={infographic} alt="infographic" id="infographic" />
           <ul className="infograph-list">
-            
+            <h1>🍽️ Live Well, Waste Less</h1>
+            <li><h3>🥦 Eat Mindfully</h3>Only take what you need; reduce plate waste.</li>
+            <li><h3>🤝 Share What You Can</h3>Refeast connects surplus food with those who need it.</li>
+            <li><h3>🚫 Don't Dump, Donate</h3>Your extra meal can feed a hungry soul.</li>
+            <li><h3>🕒 Track Expiry Dates</h3>Use perishables before they spoil.</li>
+            <li><h3>💚 Support Local Heroes</h3>Help NGOs and volunteers distribute food.</li>
+            <li><h3>🌎 Small Acts, Big Impact</h3>Reducing food waste helps our environment.</li>
+            <li><h3>🙌 Join the Refeast Movement</h3>Together, let’s fight hunger and waste.</li>
           </ul>
           </div>
         </div>

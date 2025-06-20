@@ -224,6 +224,7 @@ html{
   background-color:inherit;
   height: 100vh;
   width: 100vi;
+  display: flex;
 }
 .infograph{
   height: 100vh;
@@ -270,10 +271,22 @@ html{
 #infographic{
   position: absolute;
   right: 1cm;
-  margin-top: 2cm;
+  margin-top: 1cm;
   width: 9.5cm;
   border-radius: 1.5cm;
   border: 1px solid black;
+}
+.infograph-list{
+  position: absolute;
+  margin-top: 1cm;
+  left: 4cm;
+}
+.infograph-list li{
+  list-style: none;
+  margin-left: 2cm;
+}
+.infograph-list li h3{
+  margin-left: -1cm;
 }
 #infographic_chart{
   position: absolute;
