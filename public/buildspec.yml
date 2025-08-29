@@ -14,6 +14,8 @@ phases:
       - ls -al
       - mkdir -p output
       - cp public/index.html output/
+      - cp -r public/scripsts output/
+      - cp -r public/appspec.yml output/
 
   post_build:
     commands:
