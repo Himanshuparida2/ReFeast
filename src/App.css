@@ -1,15 +1,15 @@
-*{
+* {
   font-family: sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-.home-first{
+.home-first {
   display: flex;
   width: 100%;
   height: 100vh;
 }
-.navbar{
+.navbar {
   border-bottom: 1px solid black;
   position: fixed;
   z-index: 2;
@@ -18,25 +18,25 @@ html{
   width: 100%;
   background-color: #cfbafd;
 }
-.navbar .logo{
+.navbar .logo {
   height: 1.25cm;
   margin: 6px;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   border-radius: 50%;
-  &:hover{
-    transform: scale(1.12) ;
+  &:hover {
+    transform: scale(1.12);
   }
 }
-.navbar .ReFeast{
+.navbar .ReFeast {
   height: 0.85cm;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
-  &:hover{
-    transform: scale(1.12) ;
+  &:hover {
+    transform: scale(1.12);
   }
 }
-.login-button{
+.login-button {
   position: absolute;
   width: 2.5cm;
   height: 1cm;
@@ -44,25 +44,25 @@ html{
   cursor: pointer;
   border-radius: 25px;
   font-weight: 550;
-  &:hover{
+  &:hover {
     background-color: beige;
-    .login-dropdown{
+    .login-dropdown {
       display: block;
     }
   }
-  .login-button-Link{
+  .login-button-Link {
     text-decoration: none;
     color: black;
   }
 }
-.login{
+.login {
   position: absolute;
   top: 1.6cm;
-  &:hover .login-dropdown{
+  &:hover .login-dropdown {
     display: block;
   }
 }
-.login-dropdown{
+.login-dropdown {
   position: absolute;
   right: -0.5cm;
   width: 5cm;
@@ -72,101 +72,101 @@ html{
   display: none;
   list-style: none;
 }
-#login-dropdown-or{
+#login-dropdown-or {
   position: absolute;
   left: 2.9cm;
   top: 1.4cm;
 }
-.S9gUrf-YoZ4jf{
+.S9gUrf-YoZ4jf {
   position: absolute;
   right: 20px;
   top: 1.9cm;
 }
-.signinManually{
+.signinManually {
   position: absolute;
   right: 20px;
   top: 10px;
   width: 5cm;
   height: 1cm;
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: red;
   }
 }
-.navbar-list{
+.navbar-list {
   position: absolute;
   right: 3.5cm;
   display: flex;
   list-style-type: none;
 }
-.navbar-list li{
+.navbar-list li {
   margin: 1cm;
   cursor: pointer;
   font-weight: 550;
   text-decoration: none;
 }
-.nav-ele{
+.nav-ele {
   text-decoration: none;
   color: black;
-  &:hover{
+  &:hover {
     color: red;
-    &::after{
+    &::after {
       width: 15%;
     }
   }
 }
-.nav-ele-3{
+.nav-ele-3 {
   margin-left: -0.25cm;
 }
-.nav-ele-4{
+.nav-ele-4 {
   margin-left: -0.5cm;
 }
-.nav-ele-1::after{
+.nav-ele-1::after {
   content: "";
-    position:absolute;
-    bottom: 27px;
-    left: 56px;
-    width: 0;
-    height: 2px;
-    background-color: red;
-    transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 27px;
+  left: 56px;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
 }
-.nav-ele-2::after{
+.nav-ele-2::after {
   content: "";
-    position:absolute;
-    bottom: 27px;
-    left: 4.6cm;
-    width: 0;
-    height: 2px;
-    background-color: red;
-    transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 27px;
+  left: 4.6cm;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
 }
-.nav-ele-3::after{
+.nav-ele-3::after {
   content: "";
-    position:absolute;
-    bottom: 27px;
-    left: 7.75cm;
-    width: 0;
-    height: 2px;
-    background-color: red;
-    transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 27px;
+  left: 7.75cm;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
 }
-.nav-ele-4::after{
+.nav-ele-4::after {
   content: "";
-    position:absolute;
-    bottom: 27px;
-    left: 11.25cm;
-    width: 0;
-    height: 2px;
-    background-color: red;
-    transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 27px;
+  left: 11.25cm;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
 }
-.home{
-  background-color:#ced1fb;
+.home {
+  background-color: #ced1fb;
   width: 100%;
   height: 100%;
 }
-.home-first button{
+.home-first button {
   height: 1.5cm;
   width: 4cm;
   position: absolute;
@@ -176,77 +176,79 @@ html{
   border: 1px solid black;
   display: flex;
   align-items: center;
-  &:hover{
+  &:hover {
     background-color: aquamarine;
     color: black;
   }
 }
-.home-first button h4{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.home-first button h4 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   text-align: center;
   font-size: 0.4cm;
   margin-left: 7px;
 }
-.add-item{
+.add-item {
   left: 5cm;
 }
-.add-item img{
+.add-item img {
   height: 0.8cm;
   margin-left: 10px;
   margin-right: 4px;
 }
-.order-now img{
+.order-now img {
   height: 0.8cm;
   margin-left: 10px;
 }
-.order-now{
+.order-now {
   left: 10cm;
 }
-.centreImg{
+.centreImg {
   height: 18cm;
   position: absolute;
   right: 0;
   top: 2cm;
 }
-.centreLogo{
+.centreLogo {
   height: 5cm;
   width: 50%;
   position: absolute;
   top: 7cm;
 }
-.home-second{
-  background-color:inherit;
+.home-second {
+  background-color: inherit;
   height: 100vh;
   width: 100vi;
 }
-.home-third{
-  background-color:inherit;
+.home-third {
+  background-color: inherit;
   height: 100vh;
   width: 100vi;
   display: flex;
 }
-.infograph{
+.infograph {
   height: 100vh;
   width: 100vb;
 }
-.infograph div{
+.infograph div {
   margin-top: 1cm;
 }
-.infograph h2{
+.infograph h2 {
   position: absolute;
   right: 11.7cm;
 }
-#info-description{
+#info-description {
   position: absolute;
   right: 3cm;
   margin-top: 3.5cm;
   width: 15cm;
-  font-size:larger;
+  font-size: larger;
   font-weight: 400;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.infograph ul{
+.infograph ul {
   list-style: none;
   position: absolute;
   top: 26.3cm;
@@ -255,20 +257,21 @@ html{
   margin-top: 4cm;
   padding: "0 2cm";
 }
-.infograph ul li{
+.infograph ul li {
   margin: 0.2cm;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.infograph ul h2{
+.infograph ul h2 {
   position: absolute;
   top: -2cm;
   right: 11.11cm;
   width: 5cm;
 }
-.infograph ul li p{
+.infograph ul li p {
   margin-left: 0.7cm;
 }
-#infographic{
+#infographic {
   position: absolute;
   right: 1cm;
   margin-top: 1cm;
@@ -276,54 +279,54 @@ html{
   border-radius: 1.5cm;
   border: 1px solid black;
 }
-.infograph-list{
+.infograph-list {
   position: absolute;
   margin-top: 1cm;
   left: 4cm;
 }
-.infograph-list li{
+.infograph-list li {
   list-style: none;
   margin-left: 2cm;
 }
-.infograph-list li h3{
+.infograph-list li h3 {
   margin-left: -1cm;
 }
-#infographic_chart{
+#infographic_chart {
   position: absolute;
   left: 1cm;
   top: 25.5cm;
   bottom: 0;
   height: 18cm;
 }
-.login{
+.login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 92vh;
   width: 100vw;
 }
-.login-inner{
+.login-inner {
   height: 5cm;
   width: 9cm;
   border: 1.5px solid black;
 }
-.login-inner h3{
+.login-inner h3 {
   text-align: center;
   position: absolute;
   left: 19cm;
   top: 9.3cm;
 }
-.AWSlogin button{
+.AWSlogin button {
   height: 1cm;
   cursor: pointer;
   position: absolute;
   top: 8.4cm;
   left: 17.9cm;
 }
-.google-button{
+.google-button {
   cursor: pointer;
 }
-#contact-us{
+#contact-us {
   background-color: inherit;
 }
 .footer {
@@ -391,4 +394,214 @@ html{
   border-top: 1px solid #ccc;
   font-size: 14px;
   color: #666;
+}
+.foodlist-body {
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  top: 1.8cm;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  position: relative; 
+}
+
+.foodlist-card {
+  flex: 0 1 340px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.foodlist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.foodlist-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(
+    to right,
+    rgba(169, 3, 41, 1) 0%,
+    rgba(196, 72, 72, 1) 44%,
+    rgba(170, 34, 56, 1) 100%
+  );
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+.foodlist-tilt {
+  overflow: hidden;
+}
+.foodlist-img {
+  height: 200px;
+  overflow: hidden;
+}
+.foodlist-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.foodlist-card:hover .img img {
+  transform: scale(1.05);
+}
+.foodlist-info {
+  padding: 20px;
+}
+.foodlist-cat {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #71717a;
+  margin-bottom: 5px;
+}
+.foodlist-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #18181b;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+.foodlist-desc {
+  font-size: 13px;
+  color: #52525b;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.foodlist-feats {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+.foodlist-feat {
+  font-size: 10px;
+  background: #f4f4f5;
+  color: #71717a;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.foodlist-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.foodlist-price {
+  display: flex;
+  flex-direction: column;
+}
+.foodlist-old {
+  font-size: 13px;
+  text-decoration: line-through;
+  color: #a1a1aa;
+  margin-bottom: 2px;
+}
+.foodlist-new {
+  font-size: 20px;
+  font-weight: 700;
+  color: #18181b;
+}
+.foodlist-btn {
+  background: linear-gradient(45deg, #18181b, #27272a);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.foodlist-btn:hover {
+  background: linear-gradient(45deg, #27272a, #3f3f46);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+.foodlist-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+.foodlist-btn:hover:before {
+  left: 100%;
+}
+.foodlist-icon {
+  transition: transform 0.3s;
+}
+.foodlist-btn:hover .icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+.foodlist-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f4f4f5;
+  padding-top: 12px;
+}
+.foodlist-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.foodlist-rcount {
+  margin-left: 6px;
+  font-size: 11px;
+  color: #71717a;
+}
+.foodlist-stock {
+  font-size: 11px;
+  font-weight: 600;
+  color: #22c55e;
+}
+@media (max-width: 400px) {
+  .foodlist-card {
+    width: 90%;
+  }
+  .foodlist-title {
+    font-size: 16px;
+  }
+  .foodlist-img {
+    height: 180px;
+  }
+  .foodlist-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .foodlist-price {
+    margin-bottom: 5px;
+  }
+  .foodlist-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

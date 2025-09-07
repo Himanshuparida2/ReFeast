@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 const cognitoAuthConfig = {
   authority: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_yeMMUTDlQ",
   client_id: process.env.REACT_APP_AWS_CLIENT_ID,
-  redirect_uri: "http://localhost:3000/",
+  redirect_uri: process.env.REACT_APP_REDIRECT_URI,
   response_type: "code",
   scope: "email openid phone",
 };
