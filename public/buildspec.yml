@@ -16,6 +16,9 @@ phases:
       - cp public/index.html output/
       - cp -r public/scripts output/
       - cp -r public/appspec.yml output/
+      - cp -r src output/
+      - cp -r backend output/
+      - cp package.json output/
 
   post_build:
     commands:
