@@ -12,12 +12,13 @@ phases:
     commands:
       - echo Build started on `date`
       - ls -al
-      - mkdir -p output
+      - mkdir -p output/src
+      - mkdir -p output/backend
       - cp public/index.html output/
       - cp -r public/scripts output/
       - cp -r public/appspec.yml output/
-      - cp -r src output/
-      - cp -r backend output/
+      - cp -r src output/src
+      - cp -r backend output/backend
       - cp package.json output/
 
   post_build:
