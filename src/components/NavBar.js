@@ -13,24 +13,23 @@ function NavBar() {
   let {currentPage,setCurrentPage} = useCurrentPage();
   return (
     <div>
-      <div className='navbar'>
+      <div className='navbar' onMouseLeave={()=>setIsOpen(false)}>
         <img src={logo} className='logo' alt="logo" />
         <img src={ReFeast} className='ReFeast' alt="ReFeast" />
         <ul className='navbar-list'>
             <li><Link className='nav-ele nav-ele-1' onClick={()=>{setCurrentPage('home')}} to='/'>Home</Link></li>
-            <li><Link className='nav-ele nav-ele-2' to='/menu'>Menu</Link></li>
+            <li><Link className='nav-ele nav-ele-2' to='/foodlist'>Menu</Link></li>
             <li><Link className='nav-ele nav-ele-3' onClick={()=>{setCurrentPage('about-us')}} to='/'>About Us</Link></li>
             <li><Link className='nav-ele nav-ele-4' onClick={()=>{setCurrentPage('contact-us')}} to='/'>Contact Us</Link></li>
         </ul>
-    <button className='login-button login-button-Link' onClick={() => { isOpen?setIsOpen(false):setIsOpen(true) }}>Login
+    <button className='login-button login-button-Link' onMouseEnter={() => { setIsOpen(true) }}>Login
       <div>
-        <ul className='login-dropdown' style={{ display: isOpen ? 'block' : 'none' }}>
+        <ul className='login-dropdown' style={{ display: isOpen ? 'block' : 'none' }} onMouseOver={() => { setIsOpen(true) }} onMouseLeave={() => { setIsOpen(false) }}>
             <li style={{cursor:"pointer"}}>
-                <button className="m-4 signinManually" onClick={() => auth.signinRedirect()}>
+                <div className="m-4 signinManually" onClick={() => auth.signinRedirect()}>
                   Sign in Manually
-                </button>
+                </div>
               </li>
-              <li id='login-dropdown-or'>Or</li>
             <li><GoogleLog/></li>
         </ul>
       </div>

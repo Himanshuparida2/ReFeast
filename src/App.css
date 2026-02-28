@@ -47,6 +47,7 @@ html {
   &:hover {
     background-color: beige;
     .login-dropdown {
+      padding-top: 10px;
       display: block;
     }
   }
@@ -64,23 +65,19 @@ html {
 }
 .login-dropdown {
   position: absolute;
+  padding-top: 10px;
   right: -0.5cm;
   width: 5cm;
-  height: 3.5cm;
+  height: 3cm;
   border: 1px solid black;
   background-color: white;
   display: none;
   list-style: none;
 }
-#login-dropdown-or {
-  position: absolute;
-  left: 2.9cm;
-  top: 1.4cm;
-}
 .S9gUrf-YoZ4jf {
   position: absolute;
   right: 20px;
-  top: 1.9cm;
+  top: 1.5cm;
 }
 .signinManually {
   position: absolute;
@@ -88,6 +85,11 @@ html {
   top: 10px;
   width: 5cm;
   height: 1cm;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3%;
   cursor: pointer;
   &:hover {
     color: red;

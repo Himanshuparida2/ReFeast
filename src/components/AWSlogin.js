@@ -6,10 +6,10 @@ export const AWSlogin = () => {
 
   const auth = useAuth();
   const [userData, setUserData] = useState(null);
+  const clientId = process.env.REACT_APP_AWS_CLIENT_ID;
 
   const signOutRedirect = () => {
-    const clientId = process.env.REACT_APP_AWS_CLIENT_ID;
-    const logoutUri = process.env.REACT_APP_REDIRECT_PAGE;
+    const logoutUri = process.env.REACT_APP_REDIRECT_PAGE
     const cognitoDomain =
       "https://us-east-1yemmutdlq.auth.us-east-1.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
@@ -53,6 +53,7 @@ export const AWSlogin = () => {
       setUserData(user);
       setSigned(true);
       getData();
+      console.log("User data sent to backend:", clientId);
     } // eslint-disable-next-line
   }, [auth.isAuthenticated, auth.user]);
 

@@ -9,6 +9,7 @@ import additem from "../image/add.png";
 import animatedadditem from "../image/add-animated.gif";
 import {useCurrentPage} from "../context/currentpage";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [OrderHover, setOrderHover] = useState(false);
@@ -47,6 +48,7 @@ function Home() {
           )}
           <h4>Add Item</h4>
         </button>
+        <Link to="/foodlist">
         <button
           className="order-now"
           onMouseEnter={() => {
@@ -63,6 +65,7 @@ function Home() {
           )}
           <h4>Order Now</h4>
         </button>
+        </Link>
       </section>
       <section className="home-second" id="about-us">
         <div className="infograph">
