@@ -5,6 +5,7 @@ const cors=require('cors')
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth/login",require("./routes/User"))
 app.use("/auth/googlelogin",require("./routes/GoogleUser"))

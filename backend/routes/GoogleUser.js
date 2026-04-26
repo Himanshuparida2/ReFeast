@@ -2,9 +2,31 @@ const dynamodb = require("../AWS/DynamoDB");
 const express=require('express')
 const route=express.Router()
 require('dotenv').config()
+const multer = require("multer");
+
+const storage = multer.memoryStorage();
+const multerUpload = multer({
+  storage: storage,
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype.startsWith("image/")) {
+      cb(null, true);
+    } else {
+      cb(new Error("Only image files are allowed"), false);
+    }
+  },
+});
 
 const GoogleUser = async (req, res) => {
-  let { username, name, email, phone, display_picture } = req.body;
+  console.log("req.body:", req.body);
+  let { username, name, email, phone} = req.body;
+  const file = req.file;
+
+    if (!username || !name || !email || !phone) {
+      return res.status(400).json({ message: "Missing Required Fields!!" });
+    }
+
+  let display_picture = null;
   const getparam = {
     TableName: "ReFeast_User",
     Key: {
@@ -13,7 +35,22 @@ const GoogleUser = async (req, res) => {
   };
   try {
     const Data = await dynamodb.get(getparam).promise();
-    if (!Data.Item) {
+    if (!Data.Item && file) {
+      const folder = "display_pictures/";
+      const uploaded = await upload(
+        username,
+        file.buffer,
+        folder,
+        file.mimetype,
+        file.originalname
+      );
+
+    if(!display_picture){
+      return res.status(500).json({ message: "Image upload to S3 failed." });
+    }
+
+    display_picture=uploaded
+
       const Items_List=[]
       const param = {
         TableName: "ReFeast_User",
@@ -45,5 +82,5 @@ const GoogleUser = async (req, res) => {
     res.status(500).json({ message: "Some Error Occured"});
   }
 };
-route.post('/',GoogleUser)
+route.post('/',multerUpload.single("display_picture"),GoogleUser)
 module.exports = route;

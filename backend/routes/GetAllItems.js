@@ -4,7 +4,7 @@ const route=express.Router()
 
 const retrieve=async(req,res)=>{
 const AllItems=async ()=>{
-    const {tableName}=req.body
+    const {tableName}=req.query
     let items=[]
     let lastkey=null
    do{
